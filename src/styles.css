@@ -124,17 +124,20 @@ h1 {
   --radius: 0px 0px 0px 4px;
 }
 
-.cell.correct {
+.cell.correct,
+.key.correct {
   background: var(--color-success);
   border-color: var(--color-success);
   color: white;
 }
-.cell.incorrect {
+.cell.incorrect,
+.key.incorrect {
   background: var(--color-gray-300);
   border-color: var(--color-gray-300);
   color: white;
 }
-.cell.misplaced {
+.cell.misplaced,
+.key.misplaced {
   background: var(--color-warning);
   border-color: var(--color-warning);
   color: white;
@@ -219,9 +222,59 @@ h1 {
   margin-bottom: 0.5em;
 }
 
+/* Keyboard styles */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d0d0d0;
+  border-radius: 10%;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+/* Reset Button */
+
+.restartButton {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.restartImage:hover {
+  transform: scale(1.2) rotate(90deg);
+}
+
+.restartImage {
+  /* Filter trasform png from black to white */
+  filter: invert(99%) sepia(100%) saturate(0%) hue-rotate(28deg)
+    brightness(109%) contrast(100%);
+  /* Makes animations go out smoothly both ways */
+  transition: transform 500ms ease-in-out;
+  width: 50%;
+}
+
 /*
   Keyframe animations
 */
+
 @keyframes slideUp {
   from {
     transform: translateY(100%);
